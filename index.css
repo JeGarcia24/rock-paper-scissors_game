@@ -1,0 +1,213 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    background-color: rgb(88, 88, 88);
+    color: rgb(230, 230, 230);
+    font-family: "Comic Sans MS", "Comic Sans", sans-serif;
+    text-align: center;
+    font-size: 18px;
+}
+h1, h2{ margin-top: 0px; }
+.game{
+    padding: 30px 5px;
+    height: 100vh;
+    position: relative;
+}
+/* intro section */
+.intro{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.introContent{ margin: auto; }
+.gameTitle{
+    font-size: 50px;
+    padding: 5px;
+}
+
+/* Buttons */
+.introButton{ margin: 50px auto; }
+.introButton, 
+.setButton{
+    padding: 10px;
+    background-color: rgb(88, 88, 88);
+    color: rgb(230, 230, 230);
+    border: 2px solid rgb(230, 230, 230);
+    border-radius: 35px;
+    width: 150px;
+    font-size: 20px;
+}
+.setButton{ margin: 15px 10px; }
+button:active {
+    outline: none;
+    border: none;
+    transform: scale(0.75);
+    transition: transform 0.3s;
+}
+button:focus{ outline: 0; }
+button:hover{
+    background-color: rgb(230, 230, 230);
+    color: rgb(88, 88, 88);
+}
+
+/* actual game section */
+.actionArea{
+    width: 350px;
+    transition: opacity 0.5s ease 0.5s;
+    margin: auto;
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translate(-50%)
+}
+.scoreBoard{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.matchArea { margin-top: 35px; }
+img{
+    width: 170px;
+    max-width: 100%;
+    height: auto;
+}
+.computer-hand{ transform: rotateY(180deg); }
+.messageBoard{
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+.optionButton{
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    border: none;
+    margin: 5px;
+}
+#rock{ background-image: url("images/rock.jpg"); }
+#paper{ background-image: url("images/paper.jpg"); }
+#scissors{ background-image: url("images/scissors.jpg"); }
+
+/* hide itro section */
+div.fadeOut{
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* freeze option button */
+div.stop{ pointer-events: none; }
+
+/* Modal */
+.modal-body{
+    background-color: rgb(88, 88, 88);
+    color: rgb(230, 230, 230);
+    margin: 10px;
+    border-radius: 5px;
+    text-align: center; 
+}
+.modal-dialog{ width: 350px !important; }
+.modal img{
+    width: 300px;
+    max-width: 100%;
+    height: auto;
+}
+.modal-footer{
+  height: 40px;
+  margin-top: 10px;
+  border: none;
+}
+#myModal{ padding-top: 100px; }
+
+/* for shake animation (up-down)*/
+@keyframes shakePlayerHand{
+  0% {
+    transform: translateY(0px);
+  }
+  15% {
+    transform: translateY(-50px);
+  }
+  25% {
+    transform: translateY(0px);
+  }
+  35% {
+    transform: translateY(-50px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  65% {
+    transform: translateY(-50px);
+  }
+  75% {
+    transform: translateY(0px);
+  }
+  085% {
+    transform: translateY(-50px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+@keyframes shakeComputerHand{
+  0% {
+    transform: rotateY(180deg) translateY(0px);
+  }
+  15% {
+    transform: rotateY(180deg) translateY(-50px);
+  }
+  25% {
+    transform: rotateY(180deg) translateY(0px);
+  }
+  35% {
+    transform: rotateY(180deg) translateY(-50px);
+  }
+  50% {
+    transform: rotateY(180deg) translateY(0px);
+  }
+  65% {
+    transform: rotateY(180deg) translateY(-50px);
+  }
+  75% {
+    transform: rotateY(180deg) translateY(0px);
+  }
+  085% {
+    transform: rotateY(180deg) translateY(-50px);
+  }
+  100% {
+    transform: rotateY(180deg) translateY(0px);
+  }
+}
+
+/* desktop view */
+@media(min-width: 600px){
+  img{
+    width: 300px;
+    max-width: 100%;
+    height: auto;
+  }
+  .intro{
+    width: 700px;
+    margin: auto;
+  }
+  .actionArea{ width: 800px; }
+  .computer-hand, 
+  .player-hand{ margin: 10px 30px; }
+  .introButton, 
+  .setButton{ width: 200px; }
+  .setButton{ margin: 15px 30px; }
+  .modal-dialog{ width: 500px !important; }
+  .modal img{ width: 500px; }
+}
+@media(max-width: 600px){
+  /* below is to center text in all sides whether text is single line or double line in mobile */
+  .messageBoard{
+    width: 350px;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+}

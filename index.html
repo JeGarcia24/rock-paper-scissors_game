@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./index.css"> <!-- put this below bootstrap.min.css to prioritize my styles in css -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+ </head>
+ <body>
+     <div class="game">
+        <div class="intro">
+            <div class="introContent">
+                <h1 class="gameTitle">Rock-Paper-Scissors Game</h1>
+                <button type="button" class="introButton" id="gameButton">Let's Play</button>
+            </div>
+        </div> 
+        <div class="actionArea fadeOut">
+            <div class="scoreBoard">
+                <div class="playerScore">
+                    <h2>Player</h2>
+                    <p>0</p>
+                </div>
+                <div class="computerScore">
+                    <h2>Computer</h2>
+                    <p>0</p>
+                </div>
+            </div>
+            <div class="matchArea">
+                <div class="hands">
+                    <img class="player-hand" src="images/rock.jpg" alt="">
+                    <img class="computer-hand" src="images/rock.jpg" alt="">
+                </div>
+                <h2 class="messageBoard">Choose an option</h2>
+                <div class="options">
+                    <button type="button" class="optionButton" id="rock"></button>
+                    <button type="button" class="optionButton" id="paper"></button>
+                    <button type="button" class="optionButton" id="scissors"></button>
+                </div>
+                <button type="button" class="setButton" id="reset">Reset</button>
+                <button type="button" class="setButton" id="rules" data-toggle="modal" data-target="#myModal" data-backdrop="static">Game Rules</button>    
+            </div>
+        </div>
+        <div id="modal-container">
+            <div class="modal fade" id="myModal" role="dialog">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <img src="images/rules.jpg" alt="game-rule-image">
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-info btn-md close-button" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+     </div>
+
+     <script src="index.js"></script>
+
+ </body>
