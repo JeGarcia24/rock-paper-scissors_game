@@ -108,7 +108,10 @@ div.stop{ pointer-events: none; }
     border-radius: 5px;
     text-align: center; 
 }
-.modal-dialog{ width: 350px !important; }
+.modal-dialog{ 
+  width: 320px !important;
+  margin: auto;
+}
 .modal img{
     width: 300px;
     max-width: 100%;
